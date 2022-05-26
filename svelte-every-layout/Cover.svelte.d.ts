@@ -8,10 +8,10 @@
  * 3. "footer" i.e. content pinned to the bottom of Cover
  */
 export default class Cover extends SvelteComponentTyped<{
-    minHeight?: string;
-    wrapperClass?: string;
-    space?: string;
-    noPad?: boolean;
+    wrapperClass?: string | null | undefined;
+    space?: string | null | undefined;
+    minHeight?: string | undefined;
+    noPad?: boolean | undefined;
 }, {
     [evt: string]: CustomEvent<any>;
 }, {
@@ -26,10 +26,10 @@ export type CoverSlots = typeof __propDef.slots;
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        minHeight?: string;
-        wrapperClass?: string | null;
-        space?: string | null;
-        noPad?: boolean;
+        wrapperClass?: string | null | undefined;
+        space?: string | null | undefined;
+        minHeight?: string | undefined;
+        noPad?: boolean | undefined;
     };
     events: {
         [evt: string]: CustomEvent<any>;

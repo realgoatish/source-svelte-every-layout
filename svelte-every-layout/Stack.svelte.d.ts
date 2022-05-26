@@ -3,8 +3,8 @@
 /** @typedef {typeof __propDef.slots}  StackSlots */
 /** Evenly-spaced child elements stacked vertically */
 export default class Stack extends SvelteComponentTyped<{
-    wrapperClass?: string;
-    space?: string;
+    wrapperClass?: string | null | undefined;
+    space?: string | null | undefined;
 }, {
     [evt: string]: CustomEvent<any>;
 }, {
@@ -17,8 +17,8 @@ export type StackSlots = typeof __propDef.slots;
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        wrapperClass?: string | null;
-        space?: string | null;
+        wrapperClass?: string | null | undefined;
+        space?: string | null | undefined;
     };
     events: {
         [evt: string]: CustomEvent<any>;

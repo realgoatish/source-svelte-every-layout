@@ -1,8 +1,22 @@
 module.exports = {
 	root: true,
-	extends: ['eslint:recommended', 'prettier'],
-	plugins: ['svelte3'],
-	overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
+	extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+	plugins: ['svelte3', '@typescript-eslint'],
+	overrides: [
+    { 
+      files: ['*.svelte'], 
+      processor: 'svelte3/svelte3' 
+    },
+    {
+			files: ['*.ts'],
+			rules: {
+				'@typescript-eslint/explicit-module-boundary-types': ['warn']
+			}
+		}
+  ],
+  settings: {
+		'svelte3/typescript': () => require('typescript')
+	},
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2020
@@ -11,5 +25,8 @@ module.exports = {
 		browser: true,
 		es2017: true,
 		node: true
+	},
+  rules: {
+		'@typescript-eslint/explicit-module-boundary-types': 'off'
 	}
 };

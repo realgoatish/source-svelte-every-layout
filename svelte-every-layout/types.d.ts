@@ -6,8 +6,8 @@
  * Props:
  */
  export default class Center extends SvelteComponentTyped<{
-  max?: string;
   wrapperClass?: string;
+  max?: string;
   andText?: boolean;
   gutters?: string;
   intrinsic?: boolean;
@@ -23,8 +23,8 @@ export type CenterSlots = typeof __propDef.slots;
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
   props: {
-      max?: string;
       wrapperClass?: string;
+      max?: string;
       andText?: boolean;
       gutters?: string | null;
       intrinsic?: boolean;

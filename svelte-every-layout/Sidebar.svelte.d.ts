@@ -3,11 +3,11 @@
 /** @typedef {typeof __propDef.slots}  SidebarSlots */
 /** A sidebar & main content area, which stack on smaller screens */
 export default class Sidebar extends SvelteComponentTyped<{
-    wrapperClass?: string;
-    space?: string;
-    side?: string;
-    sideWidth?: string;
-    contentMin?: string;
+    wrapperClass?: string | null | undefined;
+    space?: string | null | undefined;
+    side?: string | undefined;
+    sideWidth?: string | null | undefined;
+    contentMin?: string | undefined;
 }, {
     [evt: string]: CustomEvent<any>;
 }, {
@@ -21,11 +21,11 @@ export type SidebarSlots = typeof __propDef.slots;
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        wrapperClass?: string | null;
-        space?: string | null;
-        side?: string;
-        sideWidth?: string | null;
-        contentMin?: string;
+        wrapperClass?: string | null | undefined;
+        space?: string | null | undefined;
+        side?: string | undefined;
+        sideWidth?: string | null | undefined;
+        contentMin?: string | undefined;
     };
     events: {
         [evt: string]: CustomEvent<any>;
