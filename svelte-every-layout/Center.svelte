@@ -4,22 +4,35 @@
   Props:
 -->
 
-<script>/** THIS IS A TEST COMMENT f */
-export let wrapperClass = '';
-export let max = 'var(--measure)';
-export let andText = false;
-export let gutters = '';
-export let intrinsic = false;
-// /** @type {!string} [wrapperClass=''] add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
-// export let wrapperClass = ''
-// /** @type {string} [max="var(--measure)"] A CSS max-width value */
-// export let max = "var(--measure)"
-// /** @type {!boolean} [andText=false] - Center align the text too (text-align: center) */
-// export let andText = false
-// /** @type {?string} [gutters=null] - the minimum space on either side of the content */
-// export let gutters = null
-// /** @type {!boolean} [intrinsic=false] - center child elements based on their content width */
-// export let intrinsic = false
+<script>
+
+  // /** THIS IS A TEST COMMENT f */
+  // export let wrapperClass: string = ''
+
+  // export let max: string = 'var(--measure)'
+
+  // export let andText: boolean = false
+
+  // export let gutters: string = ''
+
+  // export let intrinsic: boolean = false
+
+
+	/** @type {!string} [wrapperClass=''] add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
+	export let wrapperClass = ''
+
+  /** @type {string} [max="var(--measure)"] A CSS max-width value */
+  export let max = "var(--measure)"
+
+  /** @type {!boolean} [andText=false] - Center align the text too (text-align: center) */
+  export let andText = false
+
+  /** @type {?string} [gutters=null] - the minimum space on either side of the content */
+  export let gutters = null
+
+  /** @type {!boolean} [intrinsic=false] - center child elements based on their content width */
+  export let intrinsic = false
+
 </script>
 
 
