@@ -3,13 +3,13 @@
 /** @typedef {typeof __propDef.slots}  ReelSlots */
 /** A section of horizontally-scrollable content */
 export default class Reel extends SvelteComponentTyped<{
-    wrapperClass?: string | null | undefined;
-    space?: string | null | undefined;
-    visualInstructions?: boolean | undefined;
-    itemWidth?: string | undefined;
-    height?: string | undefined;
-    thumbColor?: string | null | undefined;
-    trackColor?: string | null | undefined;
+    height?: string;
+    wrapperClass?: string;
+    space?: string;
+    visualInstructions?: boolean;
+    itemWidth?: string;
+    thumbColor?: string;
+    trackColor?: string;
 }, {
     [evt: string]: CustomEvent<any>;
 }, {
@@ -22,13 +22,13 @@ export type ReelSlots = typeof __propDef.slots;
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        wrapperClass?: string | null | undefined;
-        space?: string | null | undefined;
-        visualInstructions?: boolean | undefined;
-        itemWidth?: string | undefined;
-        height?: string | undefined;
-        thumbColor?: string | null | undefined;
-        trackColor?: string | null | undefined;
+        height?: string;
+        wrapperClass?: string | null;
+        space?: string | null;
+        visualInstructions?: boolean;
+        itemWidth?: string;
+        thumbColor?: string | null;
+        trackColor?: string | null;
     };
     events: {
         [evt: string]: CustomEvent<any>;

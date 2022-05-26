@@ -5,7 +5,7 @@
 
 <script>
 	import { onMount } from 'svelte';
-	import { detectTouch } from '$lib/actions/index.js';
+	import { detectTouch } from '$lib/actions.js';
 
 	/** @type {?string} [wrapperClass=null] - add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
 	export let wrapperClass = null;

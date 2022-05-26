@@ -4,10 +4,10 @@
 /** A cluster of elements with equal spacing. Good for navigation links, social media icons, etc. */
 export default class Cluster extends SvelteComponentTyped<{
     wrapperElement: string;
-    wrapperClass?: string | null | undefined;
-    justify?: string | undefined;
-    align?: string | undefined;
-    space?: string | null | undefined;
+    wrapperClass?: string;
+    justify?: string;
+    align?: string;
+    space?: string;
 }, {
     [evt: string]: CustomEvent<any>;
 }, {
@@ -21,10 +21,10 @@ import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
         wrapperElement: string;
-        wrapperClass?: string | null | undefined;
-        justify?: string | undefined;
-        align?: string | undefined;
-        space?: string | null | undefined;
+        wrapperClass?: string | null;
+        justify?: string;
+        align?: string;
+        space?: string | null;
     };
     events: {
         [evt: string]: CustomEvent<any>;

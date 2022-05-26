@@ -4,10 +4,10 @@
 /** Needs to be wrapped in a `position: relative` parent */
 export default class Imposter extends SvelteComponentTyped<{
     imposterWrapperDiv: HTMLElement;
-    wrapperClass?: string | null | undefined;
-    contain?: boolean | undefined;
-    fixed?: boolean | undefined;
-    margin?: string | undefined;
+    fixed?: boolean;
+    contain?: boolean;
+    margin?: string;
+    wrapperClass?: string;
 }, {
     [evt: string]: CustomEvent<any>;
 }, {
@@ -21,10 +21,10 @@ import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
         imposterWrapperDiv: HTMLElement;
-        wrapperClass?: string | null | undefined;
-        contain?: boolean | undefined;
-        fixed?: boolean | undefined;
-        margin?: string | undefined;
+        fixed?: boolean;
+        contain?: boolean;
+        margin?: string;
+        wrapperClass?: string | null;
     };
     events: {
         [evt: string]: CustomEvent<any>;
