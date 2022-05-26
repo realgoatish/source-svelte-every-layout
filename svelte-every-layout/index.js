@@ -11,17 +11,15 @@
 // export { default as Stack } from './Stack.svelte';
 // export { default as Switcher } from './Switcher.svelte';
 
-import Box from './Box.svelte'
-import Center from './Center.svelte'
-import Cluster from './Cluster.svelte'
-import Cover from './Cover.svelte'
-import Frame from './Frame.svelte'
-import Grid from './Grid.svelte'
-import Icon from './Icon.svelte'
-import Imposter from './Imposter.svelte'
-import Reel from './Reel.svelte'
-import Sidebar from './Sidebar.svelte'
-import Stack from './Stack.svelte'
-import Switcher from './Switcher.svelte'
-
-export { Box, Center, Cluster, Cover, Frame, Grid, Icon, Imposter, Reel, Sidebar, Stack, Switcher }
+export * from './Box.svelte'
+export * from './Center.svelte'
+export * from './Cluster.svelte'
+export * from './Cover.svelte'
+export * from './Frame.svelte'
+export * from './Grid.svelte'
+export * from './Icon.svelte'
+export * from './Imposter.svelte'
+export * from './Reel.svelte'
+export * from './Sidebar.svelte'
+export * from './Stack.svelte'
+export * from './Switcher.svelte'
