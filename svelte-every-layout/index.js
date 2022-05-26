@@ -1,5 +1,5 @@
 export { default as Box } from './Box.svelte';
-export { Center } from './Center.svelte';
+export { default as Center } from './Center.svelte';
 export { default as Cluster } from './Cluster.svelte';
 export { default as Cover } from './Cover.svelte';
 export { default as Frame } from './Frame.svelte';

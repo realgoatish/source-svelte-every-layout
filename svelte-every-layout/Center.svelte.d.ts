@@ -5,7 +5,7 @@
  * Center content with a maximum width
  * Props:
  */
-export class Center extends SvelteComponentTyped<{
+export default class Center extends SvelteComponentTyped<{
     max?: string;
     wrapperClass?: string;
     andText?: boolean;
