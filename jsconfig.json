@@ -1,10 +1,18 @@
 {
   "extends": "./.svelte-kit/tsconfig.json",
+  "tags": {
+    "dictionaries": ["jsdoc", "closure"]
+  },
+  "plugins": [
+    "@pixi/jsdoc-template/plugins/es6-fix.js"
+  ],
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
       "$lib":["src/lib"],
-			"$lib/*": ["src/lib/*"]
+			"$lib/*": ["src/lib/*"],
+      "$prod":["svelte-every-layout"],
+			"$prod/*": ["svelte-every-layout/*"]
 		},
     "allowJs": true,
 		"checkJs": true,

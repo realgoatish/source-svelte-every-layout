@@ -16,6 +16,7 @@ const config = {
     resolve: {
       alias: {
         $lib: resolve('./src/lib'),
+        $prod: resolve('./svelte-every-layout')
       },
     },
   },

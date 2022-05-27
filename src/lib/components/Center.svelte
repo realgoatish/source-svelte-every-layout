@@ -1,17 +1,8 @@
 
 <script>
 
-  // export let wrapperClass: string = ''
-
-  // export let max: string = "var(--measure)"
-
-  // export let andText: boolean = false
-
-  // export let gutters: string = ''
-
-  // export let intrinsic: boolean = false
-
-	/** @type {string} add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) 
+	/** @type {string} 
+   * add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) 
   */
 	export let wrapperClass
 
@@ -36,7 +27,7 @@
   Center content with a maximum width
   Props:
   ```typescript
-  let yew
+  THIS COMMENT CAME FROM THE COMPONENT
   ```
 -->
 
