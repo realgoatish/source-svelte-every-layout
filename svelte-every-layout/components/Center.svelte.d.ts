@@ -10,10 +10,10 @@
  */
 export default class Center extends SvelteComponentTyped<{
     wrapperClass: string;
-    max?: string | undefined;
-    andText?: boolean | undefined;
-    gutters?: string | null | undefined;
-    intrinsic?: boolean | undefined;
+    max?: string;
+    andText?: boolean;
+    gutters?: string;
+    intrinsic?: boolean;
 }, {
     [evt: string]: CustomEvent<any>;
 }, {
@@ -27,10 +27,10 @@ import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
         wrapperClass: string;
-        max?: string | undefined;
-        andText?: boolean | undefined;
-        gutters?: string | null | undefined;
-        intrinsic?: boolean | undefined;
+        max?: string;
+        andText?: boolean;
+        gutters?: string;
+        intrinsic?: boolean;
     };
     events: {
         [evt: string]: CustomEvent<any>;

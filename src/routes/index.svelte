@@ -1,5 +1,5 @@
 <script>
-  import { Center } from '$prod/index.js'
+  import { Center } from '$prod/index'
 
   import Box from '$lib/components/Box.svelte'
 </script>

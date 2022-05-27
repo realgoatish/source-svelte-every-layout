@@ -1,13 +1,14 @@
 {
   "extends": "./.svelte-kit/tsconfig.json",
-  "tags": {
-    "dictionaries": ["jsdoc", "closure"]
-  },
-  "plugins": [
-    "@pixi/jsdoc-template/plugins/es6-fix.js"
-  ],
+  // "tags": {
+  //   "dictionaries": ["jsdoc", "closure"]
+  // },
+  // "plugins": [
+  //   "@pixi/jsdoc-template/plugins/es6-fix.js"
+  // ],
 	"compilerOptions": {
 		"baseUrl": ".",
+    // paths can be omitted for packaging. probably baseUrl too
 		"paths": {
       "$lib":["src/lib"],
 			"$lib/*": ["src/lib/*"],
@@ -16,14 +17,16 @@
 		},
     "allowJs": true,
 		"checkJs": true,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"resolveJsonModule": true,
-		"skipLibCheck": true,
-		"sourceMap": true,
-		"strict": true,
-    "moduleResolution": "node",
-    "types": ["svelte"]
+		// "esModuleInterop": true,
+		// "forceConsistentCasingInFileNames": true,
+		// "resolveJsonModule": true,
+		// "skipLibCheck": true,
+		// "sourceMap": true,
+    // "noImplicitAny": true,
+    // "declarationMap": true,
+		// "strict": true,
+    // "moduleResolution": "node12",
+    // "types": ["svelte"]
 	},
   "exclude": ["node_modules"]
 	// "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte"]

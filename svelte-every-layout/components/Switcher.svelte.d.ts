@@ -4,10 +4,10 @@
 /** Switch between horizontal & vertical layout at a given, container-based breakpoint */
 export default class Switcher extends SvelteComponentTyped<{
     wrapperElement: string;
-    wrapperClass?: string | null | undefined;
-    space?: string | null | undefined;
-    threshold?: string | undefined;
-    limit?: number | undefined;
+    wrapperClass?: string;
+    space?: string;
+    threshold?: string;
+    limit?: number;
 }, {
     [evt: string]: CustomEvent<any>;
 }, {
@@ -21,10 +21,10 @@ import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
         wrapperElement: string;
-        wrapperClass?: string | null | undefined;
-        space?: string | null | undefined;
-        threshold?: string | undefined;
-        limit?: number | undefined;
+        wrapperClass?: string | null;
+        space?: string | null;
+        threshold?: string;
+        limit?: number;
     };
     events: {
         [evt: string]: CustomEvent<any>;

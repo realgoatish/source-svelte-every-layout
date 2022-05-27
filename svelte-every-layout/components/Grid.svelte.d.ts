@@ -4,9 +4,9 @@
 /** Grid layout for e.g. cards */
 export default class Grid extends SvelteComponentTyped<{
     wrapperElement: string;
-    wrapperClass?: string | null | undefined;
-    space?: string | null | undefined;
-    min?: string | undefined;
+    wrapperClass?: string;
+    space?: string;
+    min?: string;
 }, {
     [evt: string]: CustomEvent<any>;
 }, {
@@ -20,9 +20,9 @@ import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
         wrapperElement: string;
-        wrapperClass?: string | null | undefined;
-        space?: string | null | undefined;
-        min?: string | undefined;
+        wrapperClass?: string | null;
+        space?: string | null;
+        min?: string;
     };
     events: {
         [evt: string]: CustomEvent<any>;

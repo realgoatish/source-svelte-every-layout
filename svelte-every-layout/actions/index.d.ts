@@ -12,20 +12,20 @@ export function detectTouch(node: HTMLElement): void;
  * @param {{ once?: boolean, cooldown?: number, options?: IntersectionObserverOptions, delay?: number, update?: *} | null } [config]
  */
 export function intersectionObserver(node: HTMLElement, config?: {
-    once?: boolean | undefined;
-    cooldown?: number | undefined;
-    options?: IntersectionObserverOptions | undefined;
-    delay?: number | undefined;
+    once?: boolean;
+    cooldown?: number;
+    options?: IntersectionObserverOptions;
+    delay?: number;
     update?: any;
-} | null | undefined): {
+} | null): {
     update: (update: any) => void;
     destroy: () => any;
-} | undefined;
+};
 /**
  * - Options to pass to the IntersectionObserver API
  */
 export type IntersectionObserverOptions = {
-    root?: HTMLElement | undefined;
-    rootMargin?: string | undefined;
-    threshold?: number | undefined;
+    root?: HTMLElement;
+    rootMargin?: string;
+    threshold?: number;
 };

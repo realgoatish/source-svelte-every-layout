@@ -3,12 +3,12 @@
 /** @typedef {typeof __propDef.slots}  BoxSlots */
 /** Create basic, two-tone boxes */
 export default class Box extends SvelteComponentTyped<{
-    wrapperClass?: string | null | undefined;
-    colorLight?: string | null | undefined;
-    colorDark?: string | null | undefined;
-    padding?: string | null | undefined;
-    borderWidth?: string | number | null | undefined;
-    invert?: boolean | undefined;
+    wrapperClass?: string;
+    colorLight?: string;
+    colorDark?: string;
+    padding?: string;
+    borderWidth?: string | number;
+    invert?: boolean;
 }, {
     [evt: string]: CustomEvent<any>;
 }, {
@@ -21,12 +21,12 @@ export type BoxSlots = typeof __propDef.slots;
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        wrapperClass?: string | null | undefined;
-        colorLight?: string | null | undefined;
-        colorDark?: string | null | undefined;
-        padding?: string | null | undefined;
-        borderWidth?: string | number | null | undefined;
-        invert?: boolean | undefined;
+        wrapperClass?: string | null;
+        colorLight?: string | null;
+        colorDark?: string | null;
+        padding?: string | null;
+        borderWidth?: (string | number) | null;
+        invert?: boolean;
     };
     events: {
         [evt: string]: CustomEvent<any>;

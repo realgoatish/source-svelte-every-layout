@@ -4,10 +4,10 @@
 /** SVG icons with a text label or an aria-label */
 export default class Icon extends SvelteComponentTyped<{
     iconId: string;
-    wrapperClass?: string | null | undefined;
-    space?: boolean | undefined;
-    ariaLabel?: string | null | undefined;
-    ariaHidden?: boolean | undefined;
+    wrapperClass?: string;
+    space?: boolean;
+    ariaLabel?: string;
+    ariaHidden?: boolean;
 }, {
     [evt: string]: CustomEvent<any>;
 }, {
@@ -21,10 +21,10 @@ import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
         iconId: string;
-        wrapperClass?: string | null | undefined;
-        space?: boolean | undefined;
-        ariaLabel?: string | null | undefined;
-        ariaHidden?: boolean | undefined;
+        wrapperClass?: string | null;
+        space?: boolean;
+        ariaLabel?: string | null;
+        ariaHidden?: boolean;
     };
     events: {
         [evt: string]: CustomEvent<any>;
