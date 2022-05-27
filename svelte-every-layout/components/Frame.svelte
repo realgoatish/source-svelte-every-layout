@@ -4,7 +4,7 @@
 -->
 
 <script>
-	import { intersectionObserver } from './actions.js';
+	import { intersectionObserver } from '../actions/index.js';
 
 	/** @type {?string} [wrapperClass=null] - add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
 	export let wrapperClass = null;
