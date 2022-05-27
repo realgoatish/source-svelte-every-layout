@@ -1,6 +1,6 @@
 {
   "name": "@realgoatish/svelte-every-layout",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "devDependencies": {
     "@pixi/jsdoc-template": "^2.6.0",
     "@sveltejs/adapter-auto": "next",
@@ -20,7 +20,6 @@
     "typescript": "~4.6.2"
   },
   "type": "module",
-  "types": "./types.d.ts",
   "dependencies": {
     "svelte2tsx": "^0.5.10"
   },

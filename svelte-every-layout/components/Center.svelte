@@ -1,17 +1,13 @@
 
 <script>
 
-	/** @type {string} 
-   * add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) 
-  */
+	/** @type {string} - add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
 	export let wrapperClass
 
-  /** @type {string} [max="var(--measure)"] A CSS max-width value
-   */
+  /** @type {string} - A CSS max-width value */
   export let max = "var(--measure)"
 
-  /** @type {!boolean} [andText=false] - Center align the text too (text-align: center) 
-  */
+  /** @type {!boolean} - Center align the text too (text-align: center) */
   export let andText = false
 
   /** @type {?string} [gutters=null] - the minimum space on either side of the content */
