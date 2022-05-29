@@ -5,7 +5,10 @@
  * Center content with a maximum width
  * Props:
  * ```typescript
- * THIS COMMENT CAME FROM THE COMPONENT
+ * // optional class name to enable scoped styling of each component instance
+ * wrapperClass: string
+ * // A CSS max-width value
+ * max: string
  * ```
  */
 export default class Center extends SvelteComponentTyped<{

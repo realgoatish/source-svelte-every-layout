@@ -2,7 +2,7 @@
 <script>
 
 	/** 
-   * add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages)
+   * optional class name to enable scoped styling of each component instance
    * @type {string} 
   */
 	export let wrapperClass
@@ -38,7 +38,10 @@
   Center content with a maximum width
   Props:
   ```typescript
-  THIS COMMENT CAME FROM THE COMPONENT
+  // optional class name to enable scoped styling of each component instance
+  wrapperClass: string
+  // A CSS max-width value
+  max: string
   ```
 -->
 
