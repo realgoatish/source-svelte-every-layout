@@ -1,31 +1,41 @@
-<!--
-  @component
-  Create basic, two-tone boxes
--->
 
-<script>
 
-	/** @type {?string} [wrapperClass=null] - add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
-	export let wrapperClass = null;
+<script lang='ts'>
 
-  /** @type {?string} [colorLight=null] - light color for the box, defaults to 'background-color'. Becomes 'color' if 'invert' prop is true */
-  export let colorLight = null
+	/** Optional class name to enable scoped styling of each component instance */
+	export let wrapperClass: string = null
 
-  /** @type {?string} [colorDark=null] - dark color for the box, defaults to 'color'. Becomes 'background-color' if 'invert' prop is true */
-  export let colorDark = null
+  /** Light color for the Box's CSS 'background-color' property. Becomes its CSS 'color' property if the 'invert' prop is set to true */
+  export let colorLight: string = null
 
-  /** @type {?string} - a CSS padding value */
-  export let padding = null
+  /** Dark color for the Box's CSS 'color' property. Becomes its CSS 'background-color' property if the 'invert' prop is set to true */
+  export let colorDark: string = null
 
-  /** @type {?(string|number)} - a CSS border-width value */
-  export let borderWidth = null
+  /** A CSS padding value */
+  export let padding: string = null
 
-	/** @type {boolean} [invert=false] - prop to add a class and invert 'color' & 'background-color' */
-	export let invert = false;
+  /** A CSS border-width value */
+  export let borderWidth: string = null
 
-  let test = "WABBA WABBA"
+	/** Inverts the Box's CSS 'color' & 'background-color' properties */
+	export let invert: boolean = false
 
 </script>
+
+<!-- 
+  @component
+  Create basic, two-tone boxes
+  ```typescript
+  props: {
+    wrapperClass?: string = null;
+    colorLight?: string = null;
+    colorDark?: string = null;
+    padding?: string = null;
+    borderWidth?: string = null;
+    invert?: boolean = false
+  }
+  ``` 
+-->
 
 <div
 	class={wrapperClass ? `box ${wrapperClass}` : 'box'}

@@ -1,6 +1,6 @@
 {
   "name": "@realgoatish/svelte-every-layout",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "devDependencies": {
     "@pixi/jsdoc-template": "^2.6.0",
     "@sveltejs/adapter-auto": "next",

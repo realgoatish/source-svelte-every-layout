@@ -25,9 +25,16 @@
     // "noImplicitAny": true,
     // "declarationMap": true,
 		// "strict": true,
-    // "moduleResolution": "node12",
+    // "moduleResolution": "node",
     // "types": ["svelte"]
 	},
+	"include": [
+    "src/**/*.d.ts", 
+    "src/**/*.ts", 
+    "src/**/**/*.d.ts", 
+    "src/**/**/*.ts", 
+    "src/**/**/*.svelte"
+  ],
   "exclude": ["node_modules"]
 	// "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte"]
 }

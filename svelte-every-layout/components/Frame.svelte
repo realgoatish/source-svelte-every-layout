@@ -1,26 +1,29 @@
-<!--
+
+
+<script>import { intersectionObserver } from '../actions/index.js';
+/** Optional class name to enable scoped styling of each component instance */
+export let wrapperClass = null;
+/** Set to 'true' for image lazyloading */
+export let lazy = false;
+/** The desired aspect ratio */
+export let ratio = `1:1`;
+let intersecting = false;
+const setIntersecting = () => {
+    intersecting = true;
+};
+</script>
+
+<!-- 
   @component
   Frame for cropping images to a desired aspect ratio
+  ```typescript
+  props: {
+    wrapperClass?: string = null;
+    lazy?: boolean = false;
+    ratio?: string = '1:1';
+  }
+  ``` 
 -->
-
-<script>
-	import { intersectionObserver } from '../actions/index.js';
-
-	/** @type {?string} [wrapperClass=null] - add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
-	export let wrapperClass = null;
-
-	/** @type {boolean} [lazy=false] - set to 'true' for image lazyloading */
-	export let lazy = false;
-
-  /** @type {string} [ratio=`1:1`] - The desired aspect ratio */
-  export let ratio = `1:1`
-
-	let intersecting = false;
-
-	const setIntersecting = () => {
-		intersecting = true;
-	};
-</script>
 
 <div
 	use:intersectionObserver={{ once: true, options: { rootMargin: '0px' } }}

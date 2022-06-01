@@ -1,28 +1,15 @@
-/** @typedef {typeof __propDef.props}  GridProps */
-/** @typedef {typeof __propDef.events}  GridEvents */
-/** @typedef {typeof __propDef.slots}  GridSlots */
-/** Grid layout for e.g. cards */
-export default class Grid extends SvelteComponentTyped<{
-    wrapperElement: string;
-    wrapperClass?: string;
-    space?: string;
-    min?: string;
-}, {
-    [evt: string]: CustomEvent<any>;
-}, {
-    default: {};
-}> {
-}
-export type GridProps = typeof __propDef.props;
-export type GridEvents = typeof __propDef.events;
-export type GridSlots = typeof __propDef.slots;
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        wrapperElement: string;
-        wrapperClass?: string | null;
-        space?: string | null;
-        min?: string;
+        /** Optional class name to enable scoped styling of each component instance */ wrapperClass?: string;
+        /** Choose the parent element for this component's slot contents:
+             *  - ul
+             *  - ol
+             *  - dl
+             *  - div
+             */ wrapperElement: string;
+        /** A CSS length value representing `x` in `minmax(min(x, 100%), 1fr) */ min?: string;
+        /** The space between grid cells */ space?: string;
     };
     events: {
         [evt: string]: CustomEvent<any>;
@@ -31,4 +18,20 @@ declare const __propDef: {
         default: {};
     };
 };
+export declare type GridProps = typeof __propDef.props;
+export declare type GridEvents = typeof __propDef.events;
+export declare type GridSlots = typeof __propDef.slots;
+/**
+ * Grid layout for e.g. cards
+ * ```typescript
+ * props: {
+ *   wrapperClass?: string = null;
+ *   wrapperElement: string;
+ *   min?: string = "250px";
+ *   space?: string = null;
+ * }
+ * ```
+ */
+export default class Grid extends SvelteComponentTyped<GridProps, GridEvents, GridSlots> {
+}
 export {};

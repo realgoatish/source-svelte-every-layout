@@ -1,26 +1,37 @@
-<!--
-  @component
-  Needs to be wrapped in a `position: relative` parent
--->
 
-<script>
+<script lang='ts'>
 
-	/** @type {?string} [wrapperClass=null] - add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
-	export let wrapperClass = null;
+	/** Optional class name to enable scoped styling of each component instance */
+	export let wrapperClass: string = null
 
-	/** @type {boolean} [contain=false] - Use this with the `margin` prop to allow horizontal scrolling within the modal */
-	export let contain = false;
+	/** Allow horizontal scrolling within the modal. Use this with the `margin` prop */
+	export let contain: boolean = false
 
-	/** @type {boolean} [fixed=false] - whether to position the element relative to the viewport */
-	export let fixed = false;
+	/** Whether to position the element relative to the viewport */
+	export let fixed: boolean = false
 
-  /** @type {string} [margin="0"] - The minimum space between the element and the inside edges of the positioning container over which it is placed */
-  export let margin = "0"
+  /** Minimum space between the element and the inside edges of the positioning container over which it is placed. Use this with the `contain` prop.  */
+  export let margin: string = "0"
 
-	/** @type {HTMLElement} - due to a11y requirements for DOM manipulation, we have to expose a reference to the Imposter's wrapper div so it can be manipulated from parent components e.g. Modal.svelte */
-	export let imposterWrapperDiv;
+  // TODO explain this better
+	/** Due to a11y requirements for DOM manipulation, we have to expose a reference to the Imposter's wrapper div so it can be manipulated from parent components */
+	export let imposterWrapperDiv: HTMLDivElement
 
 </script>
+
+<!-- 
+  @component
+  Needs to be wrapped in a `position: relative` parent
+  ```typescript
+  props: {
+    wrapperClass?: string = null;
+    contain?: boolean = false;
+    fixed?: boolean = false;
+    margin?: string = "0";
+    imposterWrapperDiv: HTMLDivElement;
+  }
+  ``` 
+-->
 
 <div
 	bind:this={imposterWrapperDiv}

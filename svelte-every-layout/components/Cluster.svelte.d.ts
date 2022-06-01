@@ -1,30 +1,16 @@
-/** @typedef {typeof __propDef.props}  ClusterProps */
-/** @typedef {typeof __propDef.events}  ClusterEvents */
-/** @typedef {typeof __propDef.slots}  ClusterSlots */
-/** A cluster of elements with equal spacing. Good for navigation links, social media icons, etc. */
-export default class Cluster extends SvelteComponentTyped<{
-    wrapperElement: string;
-    wrapperClass?: string;
-    justify?: string;
-    align?: string;
-    space?: string;
-}, {
-    [evt: string]: CustomEvent<any>;
-}, {
-    default: {};
-}> {
-}
-export type ClusterProps = typeof __propDef.props;
-export type ClusterEvents = typeof __propDef.events;
-export type ClusterSlots = typeof __propDef.slots;
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        wrapperElement: string;
-        wrapperClass?: string | null;
-        justify?: string;
-        align?: string;
-        space?: string | null;
+        /** Optional class name to enable scoped styling of each component instance */ wrapperClass?: string;
+        /** choose the parent element for this component's slot contents:
+             *  - ul
+             *  - ol
+             *  - dl
+             *  - div
+             */ wrapperElement: string;
+        /** A CSS `justify-content` value */ justify?: string;
+        /** A CSS `align-items` value */ align?: string;
+        /** A CSS `gap` value. The minimum space between the clustered child elements. */ space?: string;
     };
     events: {
         [evt: string]: CustomEvent<any>;
@@ -33,4 +19,21 @@ declare const __propDef: {
         default: {};
     };
 };
+export declare type ClusterProps = typeof __propDef.props;
+export declare type ClusterEvents = typeof __propDef.events;
+export declare type ClusterSlots = typeof __propDef.slots;
+/**
+ * A cluster of elements with equal spacing. Good for navigation links, social media icons, etc.
+ * ```typescript
+ * props: {
+ *   wrapperClass?: string = null;
+ *   wrapperElement?: string;
+ *   justify?: string = 'flex-start';
+ *   align?: string = 'flex-start';
+ *   space?: string = null;
+ * }
+ * ```
+ */
+export default class Cluster extends SvelteComponentTyped<ClusterProps, ClusterEvents, ClusterSlots> {
+}
 export {};

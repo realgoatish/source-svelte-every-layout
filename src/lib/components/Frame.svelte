@@ -1,26 +1,35 @@
-<!--
-  @component
-  Frame for cropping images to a desired aspect ratio
--->
 
-<script>
+
+<script lang='ts'>
 	import { intersectionObserver } from '$lib/actions/index.js';
 
-	/** @type {?string} [wrapperClass=null] - add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
-	export let wrapperClass = null;
+	/** Optional class name to enable scoped styling of each component instance */
+	export let wrapperClass: string = null
 
-	/** @type {boolean} [lazy=false] - set to 'true' for image lazyloading */
-	export let lazy = false;
+	/** Set to 'true' for image lazyloading */
+	export let lazy: boolean = false
 
-  /** @type {string} [ratio=`1:1`] - The desired aspect ratio */
+  /** The desired aspect ratio */
   export let ratio = `1:1`
 
-	let intersecting = false;
+	let intersecting = false
 
 	const setIntersecting = () => {
 		intersecting = true;
 	};
 </script>
+
+<!-- 
+  @component
+  Frame for cropping images to a desired aspect ratio
+  ```typescript
+  props: {
+    wrapperClass?: string = null;
+    lazy?: boolean = false;
+    ratio?: string = '1:1';
+  }
+  ``` 
+-->
 
 <div
 	use:intersectionObserver={{ once: true, options: { rootMargin: '0px' } }}

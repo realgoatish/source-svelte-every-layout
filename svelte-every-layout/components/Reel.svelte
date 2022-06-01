@@ -1,56 +1,60 @@
-<!--
+
+
+<script>import { onMount } from 'svelte';
+import { detectTouch } from '../actions/index.js';
+/** Optional class name to enable scoped styling of each component instance */
+export let wrapperClass = null;
+/** `div#instructions` will always be present for screen readers via `div#reel`'s `aria-describedby="instructions"` attribute. Set this prop to `true` if you want to display those instructions as a visual aid for users on hover, on focus, and for touch users */
+export let visualInstructions = false;
+/** The width of each item (child element) in the Reel */
+export let itemWidth = `auto`;
+// TODO you probably need to change the --space default values to 1rem in the CSS for consistency with other components' behaviors
+/** The space between Reel items (child elements) */
+export let space = null;
+/** The height of the Reel itself */
+export let height = `auto`;
+// TODO you should probably mention that this will default to default to #fff because that's not obvious from the default value of an empty string
+/** A CSS color value for the scrollbar */
+export let thumbColor = null;
+// TODO you should probably mention that this will default to #000 because that's not obvious from the default value of an empty string
+/** A CSS color value for the scroll track */
+export let trackColor = null;
+onMount(() => {
+    const className = 'reel';
+    const reels = Array.from(document.querySelectorAll(`.${className}`));
+    const toggleOverflowClass = (elem) => {
+        elem.classList.toggle('overflowing', elem.scrollWidth > elem.clientWidth);
+    };
+    for (let reel of reels) {
+        if ('ResizeObserver' in window) {
+            new ResizeObserver((entries) => {
+                toggleOverflowClass(entries[0].target);
+            }).observe(reel);
+        }
+        if ('MutationObserver' in window) {
+            new MutationObserver((entries) => {
+                toggleOverflowClass(entries[0].target);
+            }).observe(reel, { childList: true });
+        }
+    }
+});
+</script>
+
+<!-- 
   @component
   A section of horizontally-scrollable content
+  ```typescript
+  props: {
+    wrapperClass?: string = null;
+    visualInstructions?: boolean = false;
+    itemWidth?: string = `auto`;
+    space?: string = null;
+    height?: string = `auto`;
+    thumbColor?: string = null;
+    trackColor?: string = null;
+  }
+  ``` 
 -->
-
-<script>
-	import { onMount } from 'svelte';
-	import { detectTouch } from '../actions/index.js';
-
-	/** @type {?string} [wrapperClass=null] - add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
-	export let wrapperClass = null;
-
-	/** @type {boolean} - div#instructions will always be present for screen readers via div#reel's aria-describedby="instructions" attribute. Set this prop to 'true' if you want to display those instructions as a visual aid for users on hover, on focus, and for touch users */
-	export let visualInstructions = false;
-
-  /** @type {string} [itemWidth=`auto`] - The width of each item (child element) in the Reel */
-  export let itemWidth = `auto`
-
-  /** @type {?string} [space=null] - The space between Reel items (child elements) */
-  export let space = null
-
-  /** @type {string} [height=`auto`] - The height of the Reel itself */
-  export let height = `auto`
-
-  /** @type {?string} [thumbColor=null] - A CSS color value for the scrollbar */
-  export let thumbColor = null
-
-  /** @type {?string} [trackColor=null] - A CSS color value for the scroll track */
-  export let trackColor = null
-
-
-	onMount(() => {
-		const className = 'reel';
-		const reels = Array.from(document.querySelectorAll(`.${className}`));
-		const toggleOverflowClass = (elem) => {
-			elem.classList.toggle('overflowing', elem.scrollWidth > elem.clientWidth);
-		};
-
-		for (let reel of reels) {
-			if ('ResizeObserver' in window) {
-				new ResizeObserver((entries) => {
-					toggleOverflowClass(entries[0].target);
-				}).observe(reel);
-			}
-
-			if ('MutationObserver' in window) {
-				new MutationObserver((entries) => {
-					toggleOverflowClass(entries[0].target);
-				}).observe(reel, { childList: true });
-			}
-		}
-	});
-</script>
 
 <div use:detectTouch class={wrapperClass}>
 	<div
@@ -133,11 +137,11 @@
 
 	/* put spacing between the children of the reel, but exclude the visually hidden <span> */
 	.reel > :global(*:not(span) + *) {
-		margin-left: var(--space, var(--s0));
+		margin-left: var(--space, 1rem);
 	}
 
 	.reel:global(.overflowing) {
-		padding-bottom: var(--space, var(--s0));
+		padding-bottom: var(--space, 1rem);
 	}
 
 	/* add a focus style, since we're using tabindex=0 to make the reel focusable */

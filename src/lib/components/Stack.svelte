@@ -1,17 +1,25 @@
-<!--
-  @component
-  Evenly-spaced child elements stacked vertically
--->
 
-<script>
 
-	/** @type {?string} [wrapperClass=null] - add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
-  export let wrapperClass = null;
+<script lang='ts'>
 
-  /** @type {?string} [space=null] - A CSS `margin` value. */
-  export let space = null
+	/** Optional class name to enable scoped styling of each component instance */
+  export let wrapperClass: string = null
+
+  /** A CSS `margin` value. */
+  export let space: string = null
 
 </script>
+
+<!-- 
+  @component
+  Evenly-spaced child elements stacked vertically
+  ```typescript
+  props: {
+    wrapperClass?: string = null;
+    space?: string = null;
+  }
+  ``` 
+-->
 
 <div class={wrapperClass 
   ? `stack ${wrapperClass}` 
@@ -19,7 +27,6 @@
   style:--space={space ? space : null}
 >
   <slot />
-
 </div>
 
 <style>
@@ -39,7 +46,7 @@
   }
 
   .stack > :global(* + *) {
-    margin-block-start: var(--space, var(--s0));
+    margin-block-start: var(--space, 1rem);
   }
 
 </style>

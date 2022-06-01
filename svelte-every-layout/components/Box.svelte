@@ -1,31 +1,33 @@
-<!--
+
+
+<script>/** Optional class name to enable scoped styling of each component instance */
+export let wrapperClass = null;
+/** Light color for the Box's CSS 'background-color' property. Becomes its CSS 'color' property if the 'invert' prop is set to true */
+export let colorLight = null;
+/** Dark color for the Box's CSS 'color' property. Becomes its CSS 'background-color' property if the 'invert' prop is set to true */
+export let colorDark = null;
+/** A CSS padding value */
+export let padding = null;
+/** A CSS border-width value */
+export let borderWidth = null;
+/** Inverts the Box's CSS 'color' & 'background-color' properties */
+export let invert = false;
+</script>
+
+<!-- 
   @component
   Create basic, two-tone boxes
+  ```typescript
+  props: {
+    wrapperClass?: string = null;
+    colorLight?: string = null;
+    colorDark?: string = null;
+    padding?: string = null;
+    borderWidth?: string = null;
+    invert?: boolean = false
+  }
+  ``` 
 -->
-
-<script>
-
-	/** @type {?string} [wrapperClass=null] - add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
-	export let wrapperClass = null;
-
-  /** @type {?string} [colorLight=null] - light color for the box, defaults to 'background-color'. Becomes 'color' if 'invert' prop is true */
-  export let colorLight = null
-
-  /** @type {?string} [colorDark=null] - dark color for the box, defaults to 'color'. Becomes 'background-color' if 'invert' prop is true */
-  export let colorDark = null
-
-  /** @type {?string} - a CSS padding value */
-  export let padding = null
-
-  /** @type {?(string|number)} - a CSS border-width value */
-  export let borderWidth = null
-
-	/** @type {boolean} [invert=false] - prop to add a class and invert 'color' & 'background-color' */
-	export let invert = false;
-
-  let test = "WABBA WABBA"
-
-</script>
 
 <div
 	class={wrapperClass ? `box ${wrapperClass}` : 'box'}

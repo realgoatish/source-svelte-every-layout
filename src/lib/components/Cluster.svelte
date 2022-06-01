@@ -1,33 +1,42 @@
-<!--
-  @component
-  A cluster of elements with equal spacing. Good for navigation links, social media icons, etc.
--->
 
-<script>
 
-	/** @type {?string} [wrapperClass=null] - add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
-	export let wrapperClass = null;
+<script lang='ts'>
 
-	/**
-	 * @type {!string}
-	 * choose the parent element for this component's slot contents:
+	/** Optional class name to enable scoped styling of each component instance */
+	export let wrapperClass: string = null
+
+	/** choose the parent element for this component's slot contents:
 	 *  - ul
 	 *  - ol
 	 *  - dl
 	 *  - div
 	 */
-	export let wrapperElement;
+	export let wrapperElement: string
 
-  /** @type {string} [justify=`flex-start`] - A CSS `justify-content` value */
-  export let justify = `flex-start`
+  /** A CSS `justify-content` value */
+  export let justify: string = `flex-start`
 
-  /** @type {string} [align=`flex-start`] - A CSS `align-items` value */
-  export let align = `flex-start`
+  /** A CSS `align-items` value */
+  export let align: string = `flex-start`
 
-  /** @type {?string} [space=null] - A CSS `gap` value. The minimum space between the clustered child elements. */
-  export let space = null
+  /** A CSS `gap` value. The minimum space between the clustered child elements. */
+  export let space: string = null
 
 </script>
+
+<!-- 
+  @component
+    A cluster of elements with equal spacing. Good for navigation links, social media icons, etc.
+  ```typescript
+  props: {
+    wrapperClass?: string = null;
+    wrapperElement?: string;
+    justify?: string = 'flex-start';
+    align?: string = 'flex-start';
+    space?: string = null;
+  }
+  ``` 
+-->
 
 {#if wrapperElement === 'ul'}
 	<ul class={wrapperClass ? `cluster ${wrapperClass}` : 'cluster'}

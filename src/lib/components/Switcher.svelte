@@ -1,25 +1,43 @@
-<!--
+
+
+<script lang='ts'>
+
+	/** Optional class name to enable scoped styling of each component instance */
+  export let wrapperClass: string = null
+
+	/** Choose the parent element for this component's slot contents:
+	 *  - ul
+	 *  - ol
+	 *  - dl
+	 *  - div
+	 */
+	export let wrapperElement: string
+
+  /** A CSS `width` value (representing the `container breakpoint`) */
+  export let threshold: string
+
+  /** A CSS `margin` value */
+  export let space: string = null
+
+  /** A number representing the maximum number of items permitted for a horizontal layout */
+  export let limit: number = 4
+  
+</script>
+
+<!-- 
   @component
   Switch between horizontal & vertical layout at a given, container-based breakpoint
+  ```typescript
+  props: {
+    wrapperClass?: string = null;
+    wrapperElement: string;
+    threshold: string;
+    space?: string = null;
+    limit?: number = 4
+  }
+  ``` 
 -->
 
-
-<script>
-	/** @type {?string} [wrapperClass=null] - add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
-  export let wrapperClass = null;
-
-	/** @type {!string} - control the parent of slot content by choosing 'div', 'ul', 'ol', or 'dl' */
-	export let wrapperElement;
-
-  /** @type {string} - A CSS `width` value (representing the `container breakpoint`) */
-  export let threshold = "var(--measure)"
-
-  /** @type {?string} [space=null] - A CSS `margin` value */
-  export let space = null
-
-  /** @type {number} - A number representing the maximum number of items permitted for a horizontal layout */
-  export let limit = 4
-</script>
 
 {#if wrapperElement === 'ul'}
 	<ul class={wrapperClass ? `switcher ${wrapperClass}` : 'switcher'}
@@ -75,7 +93,7 @@
 <style>
 	/* Exposed as CSS variables:
       --space
-      --measure => the container width at which the component switches between a 
+      --threshold => the container width at which the component switches between a 
           horizontal & vertical layout
   */
 

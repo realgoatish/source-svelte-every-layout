@@ -1,27 +1,38 @@
-<!--
-  @component
-  A sidebar & main content area, which stack on smaller screens
--->
 
-<script>
-	/**
-	 * @type {?string} [wrapperClass=null] - add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
-	export let wrapperClass = null;
+
+<script lang='ts'>
+	/** Optional class name to enable scoped styling of each component instance */
+	export let wrapperClass: string = null
   
-	/**
-	 * @type {string} [side="left"] - Which element to treat as the sidebar (all values but "left" are considered "right") */
-	export let side = "left";
+	/** Which element to treat as the sidebar (all values but "left" are considered "right") */
+	export let side: string = "left"
 
-  /** @type {?string} [sideWidth=null] - Represents the width of the sidebar when adjacent. If not set (null) it defaults to the sidebar's content width */
-  export let sideWidth = null
+  /** Represents the width of the sidebar when adjacent. If not set (null), it defaults to the sidebar's content width */
+  export let sideWidth: string = null
 
-  /** @type {string} [contentMin="50%"] - A CSS percentage value. The minimum width of the content element in the horizontal configuration */
-  export let contentMin = "50%"
+  /** A CSS percentage value. The minimum width of the content element in the horizontal configuration */
+  export let contentMin: string = "50%"
 
-  /** @type {?string} [space=null] - a CSS margin value representing the spacing between the two elements */
-  export let space = null
+  /** A CSS margin value representing the spacing between the two elements */
+  export let space: string = null
 
 </script>
+
+
+<!-- 
+  @component
+  A sidebar & main content area, which stack on smaller screens
+  ```typescript
+  props: {
+    wrapperClass?: string = null;
+    side?: string = "left"
+    sideWidth?: string = null;
+    contentMin?: string = "50%";
+    space?: string = null;
+
+  }
+  ``` 
+-->
 
 <div class={wrapperClass ? `with-sidebar ${wrapperClass}` : `with-sidebar`}
   style:--space={space ? space : null}
@@ -50,7 +61,7 @@
   .with-sidebar {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space, var(--s0));
+    gap: var(--space, 1rem);
   }
 
 </style>

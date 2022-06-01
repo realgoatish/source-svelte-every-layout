@@ -1,48 +1,37 @@
 
-<script>
+<script lang='ts'>
 
-	/** 
-   * optional class name to enable scoped styling of each component instance
-   * @type {string} 
-  */
-	export let wrapperClass
+  /** Optional class name to enable scoped styling of each component instance */
+  export let wrapperClass: string = null
 
-  /** 
-   * A CSS max-width value
-   * @type {string} 
-  */
-  export let max = "var(--measure)"
+  /** A CSS max-width value */
+  export let max: string
 
-  /** 
-   * Center align the text too (text-align: center)
-   * @type {!boolean} 
-  */
-  export let andText = false
+  /** Center align the text too (text-align: center) */
+  export let andText: boolean = false
 
-  /** 
-   * the minimum space on either side of the content
-   * @type {string} 
-  */
-  export let gutters = ''
+  /** The minimum space on either side of the content */
+  export let gutters: string = null
 
-  /** 
-   * center child elements based on their content width
-   * @type {!boolean} 
-  */
-  export let intrinsic = false
+  /** Center child elements based on their content width */
+  export let intrinsic: boolean = false
 
 </script>
 
-<!--
+<!-- 
   @component
   Center content with a maximum width
   ```typescript
-  // optional class name to enable scoped styling of each component instance
-  wrapperClass: string
-  // A CSS max-width value
-  max: string
-  ```
+  props: {
+    wrapperClass?: string = null;
+    max: string;
+    andText?: boolean = false;
+    gutters?: string = null;
+    intrinsic?: boolean = false;
+  }
+  ``` 
 -->
+
 
 <div class={wrapperClass ? `center ${wrapperClass}` : 'center'} 
   style:max-inline-size={max} 
@@ -57,10 +46,6 @@
 </div>
 
 <style>
-	/* 
-    Exposed as CSS variables:
-      --measure
-  */
 
   .center {
     box-sizing: content-box;

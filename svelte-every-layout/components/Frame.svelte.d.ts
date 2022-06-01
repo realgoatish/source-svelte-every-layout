@@ -1,26 +1,9 @@
-/** @typedef {typeof __propDef.props}  FrameProps */
-/** @typedef {typeof __propDef.events}  FrameEvents */
-/** @typedef {typeof __propDef.slots}  FrameSlots */
-/** Frame for cropping images to a desired aspect ratio */
-export default class Frame extends SvelteComponentTyped<{
-    wrapperClass?: string;
-    lazy?: boolean;
-    ratio?: string;
-}, {
-    [evt: string]: CustomEvent<any>;
-}, {
-    default: {};
-}> {
-}
-export type FrameProps = typeof __propDef.props;
-export type FrameEvents = typeof __propDef.events;
-export type FrameSlots = typeof __propDef.slots;
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        wrapperClass?: string | null;
-        lazy?: boolean;
-        ratio?: string;
+        /** Optional class name to enable scoped styling of each component instance */ wrapperClass?: string;
+        /** Set to 'true' for image lazyloading */ lazy?: boolean;
+        /** The desired aspect ratio */ ratio?: string;
     };
     events: {
         [evt: string]: CustomEvent<any>;
@@ -29,4 +12,19 @@ declare const __propDef: {
         default: {};
     };
 };
+export declare type FrameProps = typeof __propDef.props;
+export declare type FrameEvents = typeof __propDef.events;
+export declare type FrameSlots = typeof __propDef.slots;
+/**
+ * Frame for cropping images to a desired aspect ratio
+ * ```typescript
+ * props: {
+ *   wrapperClass?: string = null;
+ *   lazy?: boolean = false;
+ *   ratio?: string = '1:1';
+ * }
+ * ```
+ */
+export default class Frame extends SvelteComponentTyped<FrameProps, FrameEvents, FrameSlots> {
+}
 export {};

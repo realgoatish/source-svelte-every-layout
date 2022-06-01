@@ -1,25 +1,35 @@
-<!--
+
+
+<script lang='ts'>
+
+	/** Optional class name to enable scoped styling of each component instance */
+	export let wrapperClass: string = null
+
+  /** The minimum spacing between & around all of the child elements */
+  export let space: string = null
+
+  /** The minimum height of the Cover, before it grows to the height of its content */
+  export let minHeight: string = "100vh"
+
+  /** Whether child elements should have padding */
+  export let noPad: boolean = false
+</script>
+
+<!-- 
   @component
   Cover can have 3 direct children:
-  1. "header" i.e. content pinned to the top of Cover
-  2. vertically-centered content
-  3. "footer" i.e. content pinned to the bottom of Cover
+  1. `slot="header"` - content pinned to the top of Cover
+  2. `slot="featured"` - vertically-centered content
+  3. `slot="footer"` - content pinned to the bottom of Cover
+  ```typescript
+  props: {
+    wrapperClass?: string = null;
+    space?: string = null;
+    minHeight?: string = '100vh';
+    noPad?: boolean = false;
+  }
+  ``` 
 -->
-
-<script>
-
-	/** @type {?string} [wrapperClass=null] - add a class name to the top-level element of this component to enable scoped styling of each component instance from outside (in parent components or pages) */
-	export let wrapperClass = null;
-
-  /** @type {?string} [space=null] - the minimum spacing between & around all of the child elements */
-  export let space = null
-
-  /** @type {string} [minHeight="100vh"] - the minimum height of the Cover, before it grows to the height of its content */
-  export let minHeight = "100vh"
-
-  /** @type {boolean} [noPad=false] - whether child elements should have padding */
-  export let noPad = false
-</script>
 
 <div class={wrapperClass ? `cover ${wrapperClass}` : 'cover'}
   style:--space={space ? space : null}
@@ -54,7 +64,7 @@
   }
 
   .cover > :global(*) {
-    margin-block: var(--space, var(--s0));
+    margin-block: var(--space, 1rem);
   }
 
   .cover > :first-child:not(.featured) {
