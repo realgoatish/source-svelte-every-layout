@@ -27,7 +27,14 @@ export let space = null;
   ``` 
 -->
 
-{#if wrapperElement === 'ul'}
+<svelte:element this={wrapperElement} class={wrapperClass ? `grid ${wrapperClass}` : 'grid'}
+  style:--space={space ? space : null}
+  style:--min={min}
+>
+  <slot />
+</svelte:element>
+
+<!-- {#if wrapperElement === 'ul'}
 	<ul class={wrapperClass ? `grid ${wrapperClass}` : 'grid'}
     style:--space={space ? space : null}
     style:--min={min}
@@ -55,7 +62,7 @@ export let space = null;
   >
 		<slot />
 	</div>
-{/if}
+{/if} -->
 
 <style>
 
@@ -71,6 +78,7 @@ export let space = null;
     max-inline-size: max-content;
 	}
 
+  /* TODO - :global these */
 	ul,
 	ol,
 	dl {

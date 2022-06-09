@@ -6,7 +6,7 @@ declare const __propDef: {
              *  - ul
              *  - ol
              *  - dl
-             *  - div
+             *  - div (requires each slotted child element to be wrapped in a `<div>` also)
              */ wrapperElement: string;
         /** A CSS `width` value (representing the `container breakpoint`) */ threshold: string;
         /** A CSS `margin` value */ space?: string;

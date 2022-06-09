@@ -11,6 +11,7 @@ export let wrapperClass = null;
 export let wrapperElement;
 /** A CSS `justify-content` value */
 export let justify = `flex-start`;
+// TODO change default value to `center`
 /** A CSS `align-items` value */
 export let align = `flex-start`;
 /** A CSS `gap` value. The minimum space between the clustered child elements. */
@@ -31,39 +32,13 @@ export let space = null;
   ``` 
 -->
 
-{#if wrapperElement === 'ul'}
-	<ul class={wrapperClass ? `cluster ${wrapperClass}` : 'cluster'}
-    style:--space={space ? space : null}
-    style:--justify={justify}
-    style:--align={align}
-  >
-		<slot />
-	</ul>
-{:else if wrapperElement === 'ol'}
-	<ol class={wrapperClass ? `cluster ${wrapperClass}` : 'cluster'}
-    style:--space={space ? space : null}
-    style:--justify={justify}
-    style:--align={align}
-  >
-		<slot />
-	</ol>
-{:else if wrapperElement === 'dl'}
-	<dl class={wrapperClass ? `cluster ${wrapperClass}` : 'cluster'}
-    style:--space={space ? space : null}
-    style:--justify={justify}
-    style:--align={align}
-  >
-		<slot />
-	</dl>
-{:else if wrapperElement === 'div'}
-	<div class={wrapperClass ? `cluster ${wrapperClass}` : 'cluster'}
-    style:--space={space ? space : null}
-    style:--justify={justify}
-    style:--align={align}
-  >
-		<slot />
-	</div>
-{/if}
+<svelte:element this={wrapperElement} class={wrapperClass ? `cluster ${wrapperClass}` : 'cluster'}
+  style:--space={space ? space : null}
+  style:--justify={justify}
+  style:--align={align}
+>
+  <slot />
+</svelte:element>
 
 <style>
 	/* 
@@ -79,9 +54,9 @@ export let space = null;
 		align-items: var(--align);
 	}
 
-	ul,
-	ol,
-	dl {
+	.cluster :global(ul),
+	.cluster :global(ol),
+	.cluster :global(dl) {
 		list-style: none;
 	}
 </style>
