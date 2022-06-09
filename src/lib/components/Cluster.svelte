@@ -16,6 +16,7 @@
   /** A CSS `justify-content` value */
   export let justify: string = `flex-start`
 
+  // TODO change default value to `center`
   /** A CSS `align-items` value */
   export let align: string = `flex-start`
 
@@ -38,39 +39,13 @@
   ``` 
 -->
 
-{#if wrapperElement === 'ul'}
-	<ul class={wrapperClass ? `cluster ${wrapperClass}` : 'cluster'}
-    style:--space={space ? space : null}
-    style:--justify={justify}
-    style:--align={align}
-  >
-		<slot />
-	</ul>
-{:else if wrapperElement === 'ol'}
-	<ol class={wrapperClass ? `cluster ${wrapperClass}` : 'cluster'}
-    style:--space={space ? space : null}
-    style:--justify={justify}
-    style:--align={align}
-  >
-		<slot />
-	</ol>
-{:else if wrapperElement === 'dl'}
-	<dl class={wrapperClass ? `cluster ${wrapperClass}` : 'cluster'}
-    style:--space={space ? space : null}
-    style:--justify={justify}
-    style:--align={align}
-  >
-		<slot />
-	</dl>
-{:else if wrapperElement === 'div'}
-	<div class={wrapperClass ? `cluster ${wrapperClass}` : 'cluster'}
-    style:--space={space ? space : null}
-    style:--justify={justify}
-    style:--align={align}
-  >
-		<slot />
-	</div>
-{/if}
+<svelte:element this={wrapperElement} class={wrapperClass ? `cluster ${wrapperClass}` : 'cluster'}
+  style:--space={space ? space : null}
+  style:--justify={justify}
+  style:--align={align}
+>
+  <slot />
+</svelte:element>
 
 <style>
 	/* 
@@ -86,9 +61,9 @@
 		align-items: var(--align);
 	}
 
-	ul,
-	ol,
-	dl {
+	.cluster :global(ul),
+	.cluster :global(ol),
+	.cluster :global(dl) {
 		list-style: none;
 	}
 </style>

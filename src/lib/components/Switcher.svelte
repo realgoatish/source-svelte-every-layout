@@ -9,7 +9,7 @@
 	 *  - ul
 	 *  - ol
 	 *  - dl
-	 *  - div
+	 *  - div (requires each slotted child element to be wrapped in a `<div>` also)
 	 */
 	export let wrapperElement: string
 
@@ -21,7 +21,7 @@
 
   /** A number representing the maximum number of items permitted for a horizontal layout */
   export let limit: number = 4
-  
+
 </script>
 
 <!-- 
@@ -38,8 +38,19 @@
   ``` 
 -->
 
+<svelte:element this={wrapperElement} class={wrapperClass ? `switcher ${wrapperClass}` : 'switcher'}
+  style:--threshold={threshold}
+  style:--space={space ? space : null}
+>
+  {@html `<style>
+  .switcher > :nth-last-child(n+ ${limit + 1}) {
+    flex-basis: 100%;
+  }
+  </style>`}
+  <slot />
+</svelte:element>
 
-{#if wrapperElement === 'ul'}
+<!-- {#if wrapperElement === 'ul'}
 	<ul class={wrapperClass ? `switcher ${wrapperClass}` : 'switcher'}
     style:--threshold={threshold}
     style:--space={space ? space : null}
@@ -76,7 +87,8 @@
 		<slot />
 	</dl>
 {:else if wrapperElement === 'div'}
-	<!-- each slotted child element for the Switcher requires a <div> wrapper -->
+	TODO - what does this comment mean? 
+  each slotted child element for the Switcher requires a <div> wrapper 
 	<div class={wrapperClass ? `switcher ${wrapperClass}` : 'switcher'}
     style:--threshold={threshold}
     style:--space={space ? space : null}
@@ -88,7 +100,7 @@
     </style>`}
 		<slot />
 	</div>
-{/if}
+{/if} -->
 
 <style>
 	/* Exposed as CSS variables:
