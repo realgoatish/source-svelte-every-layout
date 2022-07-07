@@ -80,8 +80,6 @@
 	.grid {
 		display: grid;
 		grid-gap: var(--space, 1rem);
-    /* a little extra insurance against grid blowout */
-    max-inline-size: max-content;
 	}
 
   /* TODO - :global these */
