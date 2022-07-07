@@ -3,10 +3,10 @@
 <script>/** Optional class name to enable scoped styling of each component instance */
 export let wrapperClass = null;
 /** The minimum spacing between & around all of the child elements */
-export let space = null;
+export let space = "var(--s1)";
 /** The minimum height of the Cover, before it grows to the height of its content */
 export let minHeight = "100vh";
-/** Whether child elements should have padding */
+/** Whether the spacing is also applied as padding to the container element */
 export let noPad = false;
 </script>
 
@@ -19,7 +19,7 @@ export let noPad = false;
   ```typescript
   props: {
     wrapperClass?: string = null;
-    space?: string = null;
+    space?: string = "var(--s1)";
     minHeight?: string = '100vh';
     noPad?: boolean = false;
   }
@@ -28,7 +28,7 @@ export let noPad = false;
 
 <div class={wrapperClass ? `cover ${wrapperClass}` : 'cover'}
   style:--space={space ? space : null}
-  style:padding={noPad ? null : "var(--space, var(--s0))"}
+  style:padding={noPad ? null : space}
   style:min-block-size={minHeight}
 >
   {#if $$slots.header}

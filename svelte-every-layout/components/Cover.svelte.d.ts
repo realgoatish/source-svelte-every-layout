@@ -4,7 +4,7 @@ declare const __propDef: {
         /** Optional class name to enable scoped styling of each component instance */ wrapperClass?: string;
         /** The minimum spacing between & around all of the child elements */ space?: string;
         /** The minimum height of the Cover, before it grows to the height of its content */ minHeight?: string;
-        /** Whether child elements should have padding */ noPad?: boolean;
+        /** Whether the spacing is also applied as padding to the container element */ noPad?: boolean;
     };
     events: {
         [evt: string]: CustomEvent<any>;
@@ -26,7 +26,7 @@ export declare type CoverSlots = typeof __propDef.slots;
  * ```typescript
  * props: {
  *   wrapperClass?: string = null;
- *   space?: string = null;
+ *   space?: string = "var(--s1)";
  *   minHeight?: string = '100vh';
  *   noPad?: boolean = false;
  * }
