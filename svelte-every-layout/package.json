@@ -1,6 +1,6 @@
 {
   "name": "@realgoatish/svelte-every-layout",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
