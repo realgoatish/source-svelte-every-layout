@@ -11,18 +11,7 @@
 		},
     "allowJs": true,
 		"checkJs": true,
-		// "esModuleInterop": true,
-		// "forceConsistentCasingInFileNames": true,
-		// "resolveJsonModule": true,
-		// "skipLibCheck": true,
-		// "sourceMap": true,
-    // "noImplicitAny": true,
-    // "declarationMap": true,
-    "strictNullChecks": true,
-    "exactOptionalPropertyTypes": true,
-		"strict": true,
-    // "moduleResolution": "node",
-    // "types": ["svelte"]
+    "types": ["svelte"]
 	},
 	"include": [
     "src/**/*.d.ts", 

@@ -5,10 +5,10 @@
 	export let wrapperClass: string = null
   
 	/** Which element to treat as the sidebar (all values but "left" are considered "right") */
-	export let side: string = "left"
+	export let side: "left"|"right"
 
-  /** Represents the width of the sidebar when adjacent. If not set (null), it defaults to the sidebar's content width */
-  export let sideWidth: string = null
+  /** Represents the width of the sidebar when adjacent. If not set (undefined), it defaults to the sidebar's content width */
+  export let sideWidth: string|undefined
 
   /** A CSS percentage value. The minimum width of the content element in the horizontal configuration */
   export let contentMin: string = "50%"

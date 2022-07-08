@@ -2,7 +2,7 @@ import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
         /** Optional class name to enable scoped styling of each component instance */ wrapperClass?: string;
-        /** Which element to treat as the sidebar (all values but "left" are considered "right") */ side?: string;
+        /** Which element to treat as the sidebar (all values but "left" are considered "right") */ side?: "left" | "right";
         /** Represents the width of the sidebar when adjacent. If not set (null), it defaults to the sidebar's content width */ sideWidth?: string;
         /** A CSS percentage value. The minimum width of the content element in the horizontal configuration */ contentMin?: string;
         /** A CSS margin value representing the spacing between the two elements */ space?: string;
