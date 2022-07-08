@@ -3,10 +3,10 @@
 <script lang='ts'>
 
 	/** Optional class name to enable scoped styling of each component instance */
-	export let wrapperClass: string = null
+	export let wrapperClass: string|undefined = undefined
 
-  /** The desired aspect ratio */
-  export let ratio = `1:1`
+  /** The desired aspect ratio e.g. '1:1', '16:9', etc. */
+  export let ratio: string = '1:1'
 
 </script>
 
@@ -15,7 +15,7 @@
   Frame for cropping images to a desired aspect ratio
   ```typescript
   props: {
-    wrapperClass?: string = null;
+    wrapperClass: string|undefined = undefined;
     ratio?: string = '1:1';
   }
   ``` 

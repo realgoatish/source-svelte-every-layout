@@ -1,9 +1,8 @@
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        /** Optional class name to enable scoped styling of each component instance */ wrapperClass?: string;
-        /** Set to 'true' for image lazyloading */ lazy?: boolean;
-        /** The desired aspect ratio */ ratio?: string;
+        /** Optional class name to enable scoped styling of each component instance */ wrapperClass?: string | undefined;
+        /** The desired aspect ratio e.g. '1:1', '16:9', etc. */ ratio?: string;
     };
     events: {
         [evt: string]: CustomEvent<any>;
@@ -19,8 +18,7 @@ export declare type FrameSlots = typeof __propDef.slots;
  * Frame for cropping images to a desired aspect ratio
  * ```typescript
  * props: {
- *   wrapperClass?: string = null;
- *   lazy?: boolean = false;
+ *   wrapperClass: string|undefined = undefined;
  *   ratio?: string = '1:1';
  * }
  * ```

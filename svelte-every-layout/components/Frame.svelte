@@ -1,16 +1,9 @@
 
 
-<script>import { intersectionObserver } from '../actions/index.js';
-/** Optional class name to enable scoped styling of each component instance */
-export let wrapperClass = null;
-/** Set to 'true' for image lazyloading */
-export let lazy = false;
-/** The desired aspect ratio */
-export let ratio = `1:1`;
-let intersecting = false;
-const setIntersecting = () => {
-    intersecting = true;
-};
+<script>/** Optional class name to enable scoped styling of each component instance */
+export let wrapperClass = undefined;
+/** The desired aspect ratio e.g. '1:1', '16:9', etc. */
+export let ratio = '1:1';
 </script>
 
 <!-- 
@@ -18,28 +11,18 @@ const setIntersecting = () => {
   Frame for cropping images to a desired aspect ratio
   ```typescript
   props: {
-    wrapperClass?: string = null;
-    lazy?: boolean = false;
+    wrapperClass: string|undefined = undefined;
     ratio?: string = '1:1';
   }
   ``` 
 -->
 
 <div
-	use:intersectionObserver={{ once: true, options: { rootMargin: '0px' } }}
-	on:intersection={setIntersecting}
 	class={wrapperClass ? `frame ${wrapperClass}` : 'frame'}
   style:--numerator={ratio.split(`:`)[0]}
   style:--denominator={ratio.split(`:`)[1]}
 >
-	<noscript>
-		<slot />
-	</noscript>
-	{#if lazy && intersecting}
-		<slot />
-	{:else if !lazy}
-		<slot />
-	{/if}
+  <slot />
 </div>
 
 <style>
